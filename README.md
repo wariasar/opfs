@@ -4,7 +4,8 @@ It is a kind of editor for the poor.
 You can use it to place text files on your local filesystem using opfs.
 
 Firefox places the files in this path:
-~/.mozilla/firefox/<yourprofile>/storage/default/<domain>/fs/
+
+~/.mozilla/firefox/\<yourprofile\>/storage/default/\<domain\>/fs/
 
 A subdirectory is created there, which contains a file composed of 52 digits (letters and numbers).
 This file contains the original content as it was entered via the webapplication.
