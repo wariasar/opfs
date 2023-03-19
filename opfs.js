@@ -15,7 +15,7 @@ worker.onmessage = function (message) {
    if(message.data[0] == "w")	
       document.getElementById("fstatus").innerHTML = "File written (" + message.data[2] + " Bytes)";
    if (message.data[0] == "r") {
-      document.getElementById("fstatus").innerHTML = "File reloaded (" + message.data[2] + ") Bytes)";
+      document.getElementById("fstatus").innerHTML = "File reloaded (" + message.data[2] + " Bytes)";
       document.getElementById("text").value = message.data[1];
    }
 }
