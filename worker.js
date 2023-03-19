@@ -14,7 +14,7 @@ onmessage = async function(message) {
       const readBuffer = new ArrayBuffer(fileSize);
       const readSize = accessHandle.read(readBuffer, { "at": 0 });
       const str = new TextDecoder().decode(readBuffer);
-      postMessage(["r", str]);
+      postMessage(["r", str, fileSize]);
    }
 
    if (message.data[0] == "w") {
@@ -23,7 +23,7 @@ onmessage = async function(message) {
       const encoder = new TextEncoder();
       const writeBuffer = encoder.encode(message.data[1]);
       const writeSize = accessHandle.write(writeBuffer, { "at" : 0 });
-      postMessage(["w", "File written"]);
+      postMessage(["w", "File written", writeSize]);
    }
 
    // Persist changes to disk.
