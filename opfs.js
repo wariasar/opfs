@@ -3,19 +3,18 @@ const worker = new Worker("worker.js");
 writeButton.addEventListener("click", (event) => {
    var addText = document.getElementById("text").value; 	
    //location.reload();
-   worker.postMessage(addText);
+   worker.postMessage(["w", addText]);
 });
 
 loadButton.addEventListener("click", (event) => {
    //location.reload();
-   worker.postMessage("");
+   worker.postMessage(["r",""]);
 });
 
 worker.onmessage = function (message) {
-   var ret = message.data.split("|");
-   if(ret[0] == "w")	
-      alert (ret[1]);
-   if (ret[0] == "r")
-      document.getElementById("text").value = ret[1];
+   if(message.data[0] == "w")	
+      alert (message.data[1]);
+   if (message.data[0] == "r")
+      document.getElementById("text").value = message.data[1];
 }
 
