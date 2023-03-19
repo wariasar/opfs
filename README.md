@@ -14,3 +14,6 @@ named on your local file system, because the name is generated randomly.
 A sqlight database is also created in this path, which contains the metadata.
 
 In Firefox this feature was introduced with version 111.
+
+![Abbildung: Timer](https://github.com/wariasar/opfs/screenshot.png)
+
