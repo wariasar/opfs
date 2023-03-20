@@ -2,7 +2,7 @@ onmessage = async function(message) {
    
    // Get handle to draft file
    const root = await navigator.storage.getDirectory();
-   const draftHandle = await root.getFileHandle("test.md", { create: true });
+   const draftHandle = await root.getFileHandle(message.data[2], { create: true });
 
    const accessHandle = await draftHandle.createSyncAccessHandle();
 

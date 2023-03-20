@@ -1,14 +1,16 @@
 const worker = new Worker("worker.js");
 
 writeButton.addEventListener("click", (event) => {
+   var fileName = document.getElementById("fname").value; 	
    var addText = document.getElementById("text").value; 	
    //location.reload();
-   worker.postMessage(["w", addText]);
+   worker.postMessage(["w", addText, fileName]);
 });
 
 loadButton.addEventListener("click", (event) => {
    //location.reload();
-   worker.postMessage(["r",""]);
+   var fileName = document.getElementById("fname").value; 	
+   worker.postMessage(["r","", fileName]);
 });
 
 worker.onmessage = function (message) {
